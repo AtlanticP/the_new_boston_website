@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import Http404
 from django.shortcuts import render
 from .models import Album
 
@@ -11,4 +11,7 @@ def index(request):
 	return render(request, 'app/index.html', context)
 
 def details(request, album_id):
-	return HttpResponse("<h2>Details for album id: " + str(album_id) + '<h2>')
+	try:
+		album = Album.objects.get(pk=album_id)
+	except:
+		raise Http404("Album does not exist")
