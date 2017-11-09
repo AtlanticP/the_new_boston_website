@@ -3,15 +3,16 @@
 <head>
 	<title>{% block title %}{% endblock %}</title>
 		{% load static %}
-	<link rel="stylesheet" type="text/css" href="{% static '\music\style.css' %}">
-	<!-- <link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}"> -->
+	<link rel="stylesheet" type="text/css" href="{% static '/music/style.css' %}">
 </head>
 <body>
 		<a href='{% url "music:index" %}'>Nikita</a><br>
-	
 							
 {% block body %}
 {% endblock %}
+
+		<br><a href='{% url "music:album-add" %}'>Add album</a>
+		
 
 </body>
 </html>
