@@ -4,6 +4,7 @@ from .models import Album
 from django.urls import reverse_lazy
 
 class IndexView(generic.ListView):
+	# model = Album
 	template_name = 'music/index.html'
 	# context_object_name = 'list_of_albums'
 

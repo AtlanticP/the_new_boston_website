@@ -4,7 +4,7 @@
 
 {% block body %} 
 
-<img src="{{ album.album_logo }}">
+<img src="{{ album.album_logo.url }}">
 
 <h1>{{ album.album_title }}</h1>
 <h3>{{ album.artist }}</h3>
@@ -16,5 +16,5 @@
 	{% for song in album.song_set.all %}
 		{{ album.artist }} - {{ song.song_title }}<br>
 	{% endfor %}
-
+<a href='{% url "music:album-update" album.id %}'>Update album</a><br>
 {% endblock %}
